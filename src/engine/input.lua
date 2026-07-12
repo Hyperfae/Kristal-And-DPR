@@ -102,7 +102,10 @@ Input.scroll_delta_y = 0
 
 Input.order = {
     "down", "right", "up", "left", "confirm", "cancel", "menu", "console", "debug_menu", "object_selector",
-    "fast_forward", "project_rebind"
+    "fast_forward", "project_rebind",
+    "editor", "editor_view", "editor_delete", "editor_tool_select", "editor_tool_world_select", "editor_tool_object",
+    "editor_tool_shape", "editor_tool_tile_brush", "editor_tool_tile_fill", "editor_tool_eraser",
+    "editor_tool_link",
 }
 
 Input.required_binds = {
@@ -229,6 +232,17 @@ function Input.resetBinds(gamepad, mod_id)
             ["object_selector"] = { { "ctrl", "o" } },
             ["fast_forward"] = { { "ctrl", "g" } },
             ["project_rebind"] = { "/" },
+            ["editor"] = { "f10" },
+            ["editor_view"] = { "tab" },
+            ["editor_delete"] = { "delete" },
+            ["editor_tool_select"] = { "v" },
+            ["editor_tool_world_select"] = { "w" },
+            ["editor_tool_object"] = { "o" },
+            ["editor_tool_shape"] = { "s" },
+            ["editor_tool_tile_brush"] = { "b" },
+            ["editor_tool_tile_fill"] = { "f" },
+            ["editor_tool_eraser"] = { "e" },
+            ["editor_tool_link"] = { "l" },
         }
         local gamepad_bindings = {
             ["up"] = { "gamepad:dpup", "gamepad:lsup" },
@@ -243,6 +257,17 @@ function Input.resetBinds(gamepad, mod_id)
             ["object_selector"] = {},
             ["fast_forward"] = {},
             ["project_rebind"] = { "gamepad:x" },
+            ["editor"] = {},
+            ["editor_view"] = {},
+            ["editor_delete"] = {},
+            ["editor_tool_select"] = {},
+            ["editor_tool_world_select"] = {},
+            ["editor_tool_object"] = {},
+            ["editor_tool_shape"] = {},
+            ["editor_tool_tile_brush"] = {},
+            ["editor_tool_tile_fill"] = {},
+            ["editor_tool_eraser"] = {},
+            ["editor_tool_link"] = {},
         }
         if gamepad ~= true then TableUtils.merge(Input.key_bindings, key_bindings) end
         if gamepad ~= false then TableUtils.merge(Input.gamepad_bindings, gamepad_bindings) end
@@ -294,6 +319,17 @@ function Input.resetBinds(gamepad, mod_id)
             ["object_selector"] = { { "ctrl", "o" } },
             ["fast_forward"] = { { "ctrl", "g" } },
             ["project_rebind"] = { "/" },
+            ["editor"] = { "f10" },
+            ["editor_view"] = { "tab" },
+            ["editor_delete"] = { "delete" },
+            ["editor_tool_select"] = { "v" },
+            ["editor_tool_world_select"] = { "w" },
+            ["editor_tool_object"] = { "o" },
+            ["editor_tool_shape"] = { "s" },
+            ["editor_tool_tile_brush"] = { "b" },
+            ["editor_tool_tile_fill"] = { "f" },
+            ["editor_tool_eraser"] = { "e" },
+            ["editor_tool_link"] = { "l" },
         }
         for _, mod in ipairs(Kristal.Mods.getMods()) do
             if mod.keybinds then
@@ -340,6 +376,17 @@ function Input.resetBinds(gamepad, mod_id)
             ["object_selector"] = {},
             ["fast_forward"] = {},
             ["project_rebind"] = { "gamepad:x" },
+            ["editor"] = {},
+            ["editor_view"] = {},
+            ["editor_delete"] = {},
+            ["editor_tool_select"] = {},
+            ["editor_tool_world_select"] = {},
+            ["editor_tool_object"] = {},
+            ["editor_tool_shape"] = {},
+            ["editor_tool_tile_brush"] = {},
+            ["editor_tool_tile_fill"] = {},
+            ["editor_tool_eraser"] = {},
+            ["editor_tool_link"] = {},
         }
         for _, mod in ipairs(Kristal.Mods.getMods()) do
             if mod.keybinds then
