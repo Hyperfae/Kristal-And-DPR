@@ -131,14 +131,14 @@ function Game:enter(previous_state, save_id, save_name, fade)
     end
 end
 
---- Register a new event class with the given ID.
+--- Registers a fallback runtime constructor for a mod event which has no EditorObject.
 ---@param id string The ID of the event.
 ---@param constructor fun(data):Object A constructor function that takes event data and returns an object instance.
 ---@return boolean registered
 function Game:registerEvent(id, constructor)
-    if Registry.getEditorEvent(id) then
+    if Registry.getEditorObject(id) then
         Logging.warn("Ignoring fallback event '" .. id
-            .. "' because an EditorEvent is already registered for that type")
+            .. "' because an EditorObject is already registered for that type")
         return false
     end
     self.event_registry:register(id, constructor)
